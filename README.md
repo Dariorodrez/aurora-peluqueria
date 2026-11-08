@@ -6,6 +6,8 @@ sin frameworks, sin build, sin dependencias de producción.
 **Contenido de demostración.** Nombre, dirección, teléfono, email, precios e imágenes
 son ficticios o ilustrativos.
 
+**Demo en vivo:** <https://dariorodrez.github.io/aurora-peluqueria/>
+
 ---
 
 ## Cómo abrirlo
