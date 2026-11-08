@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurora · Peluquería y estilismo en Madrid</title>
+  <meta name="description" content="Peluquería Aurora, en Chamberí (Madrid). Corte, color, balayage, tratamientos y recogidos. Consulta precios, horarios y pide tu cita por teléfono o email.">
+  <meta name="theme-color" content="#12100D">
+  <meta name="color-scheme" content="light">
+
+  <!-- Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Aurora Peluquería">
+  <meta property="og:title" content="Aurora · Peluquería y estilismo en Madrid">
+  <meta property="og:description" content="Corte, color y tratamientos a medida en un estudio tranquilo de Chamberí. Precios claros y cita en 24 horas.">
+  <meta property="og:image" content="assets/img/og-aurora.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Retrato de una mujer con melena rizada y voluminosa">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300..600&display=swap">
+
+  <!-- Imagen LCP: se precarga para que el navegador la descubra cuanto antes -->
+  <link rel="preload" as="image" type="image/webp"
+        href="assets/img/hero-aurora-960.webp"
+        imagesrcset="assets/img/hero-aurora-640.webp 640w, assets/img/hero-aurora-960.webp 960w, assets/img/hero-aurora-1400.webp 1400w"
+        imagesizes="(min-width: 900px) 44vw, 92vw">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Marca el documento como "con JS" antes de pintar: permite el patrón
+       de mejora progresiva (sin JS se muestra la navegación completa). -->
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Aurora Peluquería",
+    "description": "Peluquería y estilismo en Chamberí, Madrid. Corte, color, balayage, tratamientos y recogidos.",
+    "url": "https://www.aurorapeluqueria.es/",
+    "image": "https://www.aurorapeluqueria.es/assets/img/og-aurora.jpg",
+    "telephone": "+34910000000",
+    "email": "hola@aurorapeluqueria.es",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle de Fuencarral, 88",
+      "postalCode": "28004",
+      "addressLocality": "Madrid",
+      "addressCountry": "ES"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "10:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "14:00"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- =====================================================================
+       Cabecera y navegación
+       ===================================================================== -->
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#inicio">
+        <span class="brand__mark" aria-hidden="true">A</span>
+        <span class="brand__text">
+          <span class="brand__name">Aurora</span>
+          <span class="brand__tagline">Peluquería &amp; estilismo</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-principal"
+              aria-label="Abrir menú de navegación">
+        <span class="nav-toggle__box" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="nav-principal" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Inicio</a></li>
+          <li><a class="nav__link" href="#servicios">Servicios</a></li>
+          <li><a class="nav__link" href="#galeria">Galería</a></li>
+          <li><a class="nav__link" href="#horario">Horario</a></li>
+          <li><a class="nav__link" href="#contacto">Contacto</a></li>
+          <li class="nav__cta"><a class="btn btn--gold btn--sm" href="tel:+34910000000">Pedir cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===================================================================
+         Portada
+         =================================================================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Madrid · Chamberí</p>
+          <h1 class="hero__title" id="hero-title">El detalle que<br><em>cambia</em> todo.</h1>
+          <p class="hero__lead">
+            Corte, color y tratamientos a medida en un estudio tranquilo. Escuchamos antes de
+            coger las tijeras: cada melena pide algo distinto.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--gold" href="tel:+34910000000">Pedir cita</a>
+            <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+          </div>
+          <dl class="hero__facts">
+            <div class="hero__fact">
+              <dt>Estudio</dt>
+              <dd>Desde 2014</dd>
+            </div>
+            <div class="hero__fact">
+              <dt>Zona</dt>
+              <dd>Chamberí</dd>
+            </div>
+            <div class="hero__fact">
+              <dt>Horario</dt>
+              <dd>Lun–Sáb</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="hero__media">
+          <img src="assets/img/hero-aurora-960.webp"
+               srcset="assets/img/hero-aurora-640.webp 640w,
+                       assets/img/hero-aurora-960.webp 960w,
+                       assets/img/hero-aurora-1400.webp 1400w"
+               sizes="(min-width: 900px) 44vw, 92vw"
+               width="1400" height="1750"
+               alt="Retrato de una mujer joven con melena rizada y voluminosa sobre fondo malva"
+               fetchpriority="high" decoding="async">
+          <figcaption class="hero__caption">Volumen y definición · trabajo de estudio</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Servicios
+         =================================================================== -->
+    <section class="section section--paper" id="servicios" aria-labelledby="servicios-title">
+      <div class="wrap">
+        <header class="section__header">
+          <p class="eyebrow">Servicios</p>
+          <h2 class="section__title" id="servicios-title">Precios claros, sin sorpresas</h2>
+          <p class="section__lead">
+            Tarifas orientativas por servicio. La duración es una estimación: la confirmamos
+            contigo al reservar la cita.
+          </p>
+        </header>
+
+        <ul class="cards" role="list">
+          <li class="card reveal">
+            <span class="card__index" aria-hidden="true">01</span>
+            <h3 class="card__title">Corte y estilo</h3>
+            <p class="card__text">Corte personalizado, lavado y peinado con acabado natural.</p>
+            <p class="card__foot">
+              <span class="card__price"><span class="card__from">desde</span> 32 €</span>
+              <span class="card__duration">45 min</span>
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__index" aria-hidden="true">02</span>
+            <h3 class="card__title">Color completo</h3>
+            <p class="card__text">Coloración integral con diagnóstico previo y acabado con tratamiento.</p>
+            <p class="card__foot">
+              <span class="card__price"><span class="card__from">desde</span> 68 €</span>
+              <span class="card__duration">120 min</span>
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__index" aria-hidden="true">03</span>
+            <h3 class="card__title">Balayage y mechas</h3>
+            <p class="card__text">Iluminación a mano alzada para un degradado suave y mantenible.</p>
+            <p class="card__foot">
+              <span class="card__price"><span class="card__from">desde</span> 95 €</span>
+              <span class="card__duration">180 min</span>
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__index" aria-hidden="true">04</span>
+            <h3 class="card__title">Tratamiento de hidratación</h3>
+            <p class="card__text">Mascarilla profunda y masaje capilar para devolver brillo y elasticidad.</p>
+            <p class="card__foot">
+              <span class="card__price"><span class="card__from">desde</span> 38 €</span>
+              <span class="card__duration">40 min</span>
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__index" aria-hidden="true">05</span>
+            <h3 class="card__title">Peinado y acabado</h3>
+            <p class="card__text">Secado, ondas o plancha con producto de acabado a elegir.</p>
+            <p class="card__foot">
+              <span class="card__price"><span class="card__from">desde</span> 28 €</span>
+              <span class="card__duration">45 min</span>
+            </p>
+          </li>
+
+          <li class="card reveal">
+            <span class="card__index" aria-hidden="true">06</span>
+            <h3 class="card__title">Recogido de evento</h3>
+            <p class="card__text">Recogidos y semirecogidos para invitadas, novias y celebraciones.</p>
+            <p class="card__foot">
+              <span class="card__price"><span class="card__from">desde</span> 55 €</span>
+              <span class="card__duration">60 min</span>
+            </p>
+          </li>
+        </ul>
+
+        <p class="notice">
+          Precios con IVA incluido. El importe final se confirma tras valorar largo, densidad y
+          estado del cabello.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Galería
+         =================================================================== -->
+    <section class="section section--ink" id="galeria" aria-labelledby="galeria-title">
+      <div class="wrap">
+        <header class="section__header">
+          <p class="eyebrow">Galería</p>
+          <h2 class="section__title" id="galeria-title">Trabajo reciente</h2>
+          <p class="section__lead">Cortes, color y detalles del día a día en el estudio.</p>
+        </header>
+
+        <div class="gallery">
+          <figure class="gallery__item reveal">
+            <img src="assets/img/galeria-01-800.webp"
+                 srcset="assets/img/galeria-01-480.webp 480w,
+                         assets/img/galeria-01-800.webp 800w,
+                         assets/img/galeria-01-1200.webp 1200w"
+                 sizes="(min-width: 960px) 31vw, (min-width: 560px) 47vw, 92vw"
+                 width="1200" height="800" loading="lazy" decoding="async"
+                 alt="Interior del salón en blanco y negro, con sillones de corte frente a los espejos">
+            <figcaption>Interior del estudio</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal">
+            <img src="assets/img/galeria-02-800.webp"
+                 srcset="assets/img/galeria-02-480.webp 480w,
+                         assets/img/galeria-02-800.webp 800w,
+                         assets/img/galeria-02-1000.webp 1000w"
+                 sizes="(min-width: 960px) 31vw, (min-width: 560px) 47vw, 92vw"
+                 width="1000" height="1500" loading="lazy" decoding="async"
+                 alt="Detalle de un corte de cabello con máquina y peine, guiado por la mano de un barbero">
+            <figcaption>Precisión en el corte</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal">
+            <img src="assets/img/galeria-03-800.webp"
+                 srcset="assets/img/galeria-03-480.webp 480w,
+                         assets/img/galeria-03-800.webp 800w,
+                         assets/img/galeria-03-1200.webp 1200w"
+                 sizes="(min-width: 960px) 31vw, (min-width: 560px) 47vw, 92vw"
+                 width="1200" height="800" loading="lazy" decoding="async"
+                 alt="Estilista secando el pelo de una clienta con secador y cepillo en un salón luminoso">
+            <figcaption>Secado y acabado</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal">
+            <img src="assets/img/galeria-04-800.webp"
+                 srcset="assets/img/galeria-04-480.webp 480w,
+                         assets/img/galeria-04-800.webp 800w,
+                         assets/img/galeria-04-1200.webp 1200w"
+                 sizes="(min-width: 960px) 31vw, (min-width: 560px) 47vw, 92vw"
+                 width="1200" height="800" loading="lazy" decoding="async"
+                 alt="Barbero perfilando la barba de un cliente bajo una luz cálida y tenue">
+            <figcaption>Barbería</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal">
+            <img src="assets/img/galeria-05-800.webp"
+                 srcset="assets/img/galeria-05-480.webp 480w,
+                         assets/img/galeria-05-800.webp 800w,
+                         assets/img/galeria-05-1200.webp 1200w"
+                 sizes="(min-width: 960px) 31vw, (min-width: 560px) 47vw, 92vw"
+                 width="1200" height="800" loading="lazy" decoding="async"
+                 alt="Vista general de un salón moderno con pared de ladrillo visto y sillones negros">
+            <figcaption>El espacio</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal">
+            <img src="assets/img/galeria-06-800.webp"
+                 srcset="assets/img/galeria-06-480.webp 480w,
+                         assets/img/galeria-06-800.webp 800w,
+                         assets/img/galeria-06-1100.webp 1100w"
+                 sizes="(min-width: 960px) 31vw, (min-width: 560px) 47vw, 92vw"
+                 width="1100" height="1100" loading="lazy" decoding="async"
+                 alt="Detalle de un secado con cepillo redondo sobre cabello rubio ondulado">
+            <figcaption>Brillo y movimiento</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal">
+            <img src="assets/img/galeria-07-800.webp"
+                 srcset="assets/img/galeria-07-480.webp 480w,
+                         assets/img/galeria-07-800.webp 800w,
+                         assets/img/galeria-07-1200.webp 1200w"
+                 sizes="(min-width: 960px) 31vw, (min-width: 560px) 47vw, 92vw"
+                 width="1200" height="1500" loading="lazy" decoding="async"
+                 alt="Melena larga y ondulada recogida con las manos, vista desde atrás">
+            <figcaption>Ondas naturales</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal">
+            <img src="assets/img/galeria-08-800.webp"
+                 srcset="assets/img/galeria-08-480.webp 480w,
+                         assets/img/galeria-08-800.webp 800w,
+                         assets/img/galeria-08-1200.webp 1200w"
+                 sizes="(min-width: 960px) 31vw, (min-width: 560px) 47vw, 92vw"
+                 width="1200" height="800" loading="lazy" decoding="async"
+                 alt="Brochas de maquillaje agrupadas en un vaso sobre una mesa de trabajo">
+            <figcaption>Detalles de mesa</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Horario y ubicación
+         =================================================================== -->
+    <section class="section section--paper" id="horario" aria-labelledby="horario-title">
+      <div class="wrap hours">
+        <div class="hours__main">
+          <p class="eyebrow">Horario y ubicación</p>
+          <h2 class="section__title" id="horario-title">En el corazón de Chamberí</h2>
+          <p class="section__lead">
+            Estamos en una calle tranquila, a cuatro minutos del metro. Si vienes en coche,
+            hay aparcamiento público en la misma manzana.
+          </p>
+
+          <table class="hours__table">
+            <caption class="hours__caption">Horario de apertura</caption>
+            <thead>
+              <tr>
+                <th scope="col">Día</th>
+                <th scope="col">Horario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Lunes a viernes</th>
+                <td>10:00 – 20:00</td>
+              </tr>
+              <tr>
+                <th scope="row">Sábado</th>
+                <td>10:00 – 14:00</td>
+              </tr>
+              <tr>
+                <th scope="row">Domingo</th>
+                <td>Cerrado</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="hours__note">Última cita 45 minutos antes del cierre.</p>
+        </div>
+
+        <aside class="hours__aside" aria-labelledby="direccion-title">
+          <h3 class="hours__aside-title" id="direccion-title">Dónde estamos</h3>
+          <address class="hours__address">
+            Calle de Fuencarral, 88<br>
+            28004 Madrid
+          </address>
+          <p class="hours__transport">Metro Tribunal (L1 y L10), a 4 minutos a pie.</p>
+          <a class="btn btn--outline" href="https://www.google.com/maps/search/?api=1&amp;query=Calle+de+Fuencarral+88+28004+Madrid"
+             target="_blank" rel="noopener noreferrer">
+            Abrir en Google Maps<span class="sr-only"> (se abre en una pestaña nueva)</span>
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         Contacto
+         =================================================================== -->
+    <section class="section section--ink section--contact" id="contacto" aria-labelledby="contacto-title">
+      <div class="wrap contact">
+        <p class="eyebrow">Contacto</p>
+        <h2 class="contact__title" id="contacto-title">Pide tu cita</h2>
+        <p class="contact__lead">
+          Llámanos o escríbenos y buscamos el hueco que mejor te venga. Respondemos en horario
+          de apertura.
+        </p>
+
+        <div class="contact__actions">
+          <a class="btn btn--gold btn--lg" href="tel:+34910000000">Llamar al 910 00 00 00</a>
+          <a class="btn btn--ghost btn--lg" href="mailto:hola@aurorapeluqueria.es">Escribir un email</a>
+        </div>
+
+        <ul class="contact__list" role="list">
+          <li>
+            <span class="contact__label">Teléfono</span>
+            <a href="tel:+34910000000">910 00 00 00</a>
+          </li>
+          <li>
+            <span class="contact__label">Email</span>
+            <a href="mailto:hola@aurorapeluqueria.es">hola@aurorapeluqueria.es</a>
+          </li>
+          <li>
+            <span class="contact__label">Dirección</span>
+            <span>Calle de Fuencarral, 88 · Madrid</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       Pie
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__name">Aurora</span>
+        <p>Peluquería y estilismo en Madrid.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Navegación del pie de página">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#horario">Horario</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__contact">
+        <p>Calle de Fuencarral, 88 · 28004 Madrid</p>
+        <p>
+          <a href="tel:+34910000000">910 00 00 00</a> ·
+          <a href="mailto:hola@aurorapeluqueria.es">hola@aurorapeluqueria.es</a>
+        </p>
+      </div>
+
+      <p class="site-footer__legal">
+        © <span data-year>2026</span> Aurora Peluquería. Sitio de demostración: nombre, datos
+        de contacto, precios e imágenes son ficticios o ilustrativos.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts clásicos con `defer`: funcionan también abriendo el archivo con
+       doble clic (file://), donde los módulos ES quedarían bloqueados por CORS. -->
+  <script src="js/navigation.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

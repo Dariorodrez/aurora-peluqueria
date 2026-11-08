@@ -1,0 +1,528 @@
+/* ==========================================================================
+   Aurora · components.css
+   Componentes: marca, navegación, botones, tarjetas, galería, tabla y avisos
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Marca
+   -------------------------------------------------------------------------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand__mark {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding-bottom: 0.15rem;
+  border: 1px solid rgba(200, 160, 90, 0.55);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--gold-300);
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  line-height: 1.1;
+}
+
+.brand__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.brand__tagline {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sand-600);
+}
+
+/* En pantallas muy estrechas la marca se queda solo con el nombre. */
+@media (max-width: 23.75rem) {
+  .brand__tagline {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Navegación
+   -------------------------------------------------------------------------- */
+.nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 0.25rem var(--gutter) 1.75rem;
+  background-color: var(--ink-900);
+  border-bottom: 1px solid rgba(247, 243, 236, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.75rem);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+}
+
+.nav.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nav__link {
+  display: block;
+  padding: 0.85rem 0.25rem;
+  border-bottom: 1px solid rgba(247, 243, 236, 0.08);
+  font-size: 1.0625rem;
+  text-decoration: none;
+}
+
+.nav__link:hover,
+.nav__link[aria-current] {
+  color: var(--gold-300);
+}
+
+.nav__cta {
+  margin-top: 1rem;
+}
+
+.nav__cta .btn {
+  width: 100%;
+}
+
+/* Botón hamburguesa */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: -0.5rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: inherit;
+  cursor: pointer;
+}
+
+.nav-toggle__box {
+  position: relative;
+  display: block;
+  width: 1.375rem;
+  height: 0.75rem;
+}
+
+.nav-toggle__box::before,
+.nav-toggle__box::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: transform var(--transition), top var(--transition), bottom var(--transition);
+}
+
+.nav-toggle__box::before {
+  top: 0;
+}
+
+.nav-toggle__box::after {
+  bottom: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__box::before {
+  top: calc(50% - 0.75px);
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__box::after {
+  bottom: calc(50% - 0.75px);
+  transform: rotate(-45deg);
+}
+
+/* Escritorio: navegación siempre visible */
+@media (min-width: 900px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    padding: 0;
+    background: none;
+    border: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(1rem, 2.2vw, 1.85rem);
+  }
+
+  .nav__link {
+    padding: 0.65rem 0;
+    border: 0;
+    font-size: 0.9375rem;
+  }
+
+  .nav__link[aria-current] {
+    color: var(--cream-50);
+    text-decoration: underline;
+    text-underline-offset: 0.45em;
+    text-decoration-color: var(--gold-400);
+  }
+
+  .nav__cta {
+    margin-top: 0;
+  }
+
+  .nav__cta .btn {
+    width: auto;
+  }
+}
+
+/* Sin JavaScript: navegación visible y sin botón */
+.no-js .nav-toggle {
+  display: none;
+}
+
+.no-js .nav {
+  position: static;
+  padding: 0 0 0.75rem;
+  background: none;
+  border: 0;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.no-js .nav__list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.no-js .nav__link {
+  padding: 0.35rem 0;
+  border: 0;
+  font-size: 0.9375rem;
+}
+
+.no-js .site-header__inner {
+  flex-wrap: wrap;
+  padding-block: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. Botones
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+    border-color var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: none;
+}
+
+.btn--gold {
+  background-color: var(--gold-400);
+  border-color: var(--gold-400);
+  color: var(--ink-950);
+}
+
+.btn--gold:hover {
+  background-color: var(--gold-300);
+  border-color: var(--gold-300);
+}
+
+.btn--ghost {
+  color: var(--cream-50);
+  border-color: rgba(247, 243, 236, 0.38);
+}
+
+.btn--ghost:hover {
+  background-color: rgba(247, 243, 236, 0.07);
+  border-color: rgba(247, 243, 236, 0.7);
+}
+
+.btn--outline {
+  color: var(--text-900);
+  border-color: var(--border-strong);
+}
+
+.btn--outline:hover {
+  background-color: var(--cream-100);
+  border-color: var(--text-700);
+}
+
+.btn--sm {
+  min-height: 2.75rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.875rem;
+}
+
+.btn--lg {
+  min-height: 3.25rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Tarjetas de servicio
+   -------------------------------------------------------------------------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition), box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.card:hover {
+  border-color: rgba(200, 160, 90, 0.7);
+  box-shadow: var(--shadow-1);
+  transform: translateY(-2px);
+}
+
+.card__index {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-700);
+}
+
+.card__title {
+  margin-top: 0.3rem;
+}
+
+.card__text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-600);
+}
+
+.card__foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--text-600);
+}
+
+.card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--text-900);
+}
+
+.card__from {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-600);
+}
+
+/* --------------------------------------------------------------------------
+   5. Galería
+   -------------------------------------------------------------------------- */
+.gallery__item {
+  margin: 0 0 var(--space-2);
+  background-color: var(--ink-800);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  transition: transform 600ms var(--ease);
+}
+
+.gallery__item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery__item figcaption {
+  padding: 0.75rem 0.9rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sand-500);
+}
+
+/* --------------------------------------------------------------------------
+   6. Horario
+   -------------------------------------------------------------------------- */
+.hours__caption {
+  padding-bottom: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--gold-700);
+}
+
+.hours__table {
+  width: 100%;
+  margin-top: 1.75rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.hours__table th,
+.hours__table td {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+  font-weight: 400;
+  text-align: left;
+  vertical-align: top;
+}
+
+.hours__table thead th {
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-600);
+}
+
+.hours__table tbody th {
+  color: var(--text-700);
+}
+
+.hours__table td {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-900);
+}
+
+.hours__note {
+  margin-top: 0.9rem;
+  font-size: 0.8125rem;
+  color: var(--text-600);
+}
+
+.hours__aside-title {
+  margin-bottom: 0.6rem;
+}
+
+.hours__address {
+  font-style: normal;
+  line-height: 1.6;
+  color: var(--text-700);
+}
+
+.hours__transport {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-600);
+}
+
+.hours__aside .btn {
+  margin-top: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Contacto
+   -------------------------------------------------------------------------- */
+.contact__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contact__label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sand-600);
+}
+
+.contact__list a {
+  color: var(--cream-50);
+}
+
+.contact__list a:hover {
+  color: var(--gold-300);
+}
+
+/* --------------------------------------------------------------------------
+   8. Revelado al hacer scroll (mejora progresiva)
+   -------------------------------------------------------------------------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .gallery__item:hover img,
+  .btn:hover,
+  .card:hover {
+    transform: none;
+  }
+}

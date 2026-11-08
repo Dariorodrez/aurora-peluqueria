@@ -1,0 +1,19 @@
+{
+  "name": "aurora-peluqueria",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web de una peluquería ficticia en Madrid. HTML5, CSS3 y JavaScript vanilla: sin frameworks ni dependencias de producción.",
+  "license": "ISC",
+  "type": "commonjs",
+  "scripts": {
+    "serve": "node tools/serve.mjs",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "check": "node tools/check.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6"
+  }
+}
